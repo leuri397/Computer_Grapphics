@@ -2,6 +2,14 @@
 #include "Picture.h"
 #include <string>
 
+enum Conversions {
+    INVERT = 0,
+    FLIP_HORIZONTALLY = 1,
+    FLIP_VERTICALLY = 2,
+    ROTATE_CLOCKWISE = 3,
+    ROTATE_ANTICLOCKWISE = 4
+};
+
 int errorHandler(Errors error) {
     switch (error)
     {
@@ -27,31 +35,30 @@ int main(int argc, char* argv[])
         return -1;
     }
     std::string inputFile, outputFile;
-    int conversion;
+    Conversions conversion;
     Errors Current_Error;
     inputFile = argv[1];
     outputFile = argv[2];
-    conversion = atoi(argv[3]);
-
+    conversion = (Conversions)atoi(argv[3]);
     Picture NewPic;
     Current_Error = NewPic.OpenFile(inputFile);
     if (errorHandler(Current_Error) == -1)
         return -1;
     switch (conversion)
     {
-    case 0:
+    case INVERT:
         NewPic.Invert();
         break;
-    case 1:
+    case FLIP_HORIZONTALLY:
         NewPic.Flip(false);
         break;
-    case 2:
+    case FLIP_VERTICALLY:
         NewPic.Flip(true);
         break;
-    case 3:
+    case ROTATE_CLOCKWISE:
        Current_Error = NewPic.Rotate(true);
         break;
-    case 4:
+    case ROTATE_ANTICLOCKWISE:
        Current_Error = NewPic.Rotate(false);
         break;
     default:
