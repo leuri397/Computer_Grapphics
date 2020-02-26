@@ -17,7 +17,7 @@ Picture::Picture()
 	height = 0;
 	width = 0;
 	color = false;
-	image = NULL;
+	image = nullptr;
 	bytes = 0;
 	maxvalue = 0;
 }
@@ -47,6 +47,8 @@ Errors Picture::OpenFile(string filename)
 	}
 	input >> width >> height;
 	input >> maxvalue;
+	if (!input.good())
+		return Errors::FILE_ERROR;
 	bytes = ceil(log2(maxvalue))/8;
 	char* image_char;
 	if (color)
@@ -67,6 +69,8 @@ Errors Picture::OpenFile(string filename)
 		input.read(image_char, 1);
 		input.read(image_char, bytes * width * height);
 	}
+	if (!input.good())
+		return FILE_ERROR;
 	input.close();
 	return Errors::OK;
 }
@@ -97,6 +101,8 @@ Errors Picture::SaveToFile(std::string filename)
 	{
 		output.write(image_char, bytes * width * height);
 	}
+	if (output.fail())
+		return FILE_ERROR;
 	output.close();
 	return Errors::OK;
 }
@@ -246,4 +252,5 @@ Picture::~Picture()
 {
 	delete[] image;
 }
+
 
