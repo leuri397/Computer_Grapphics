@@ -36,13 +36,6 @@ int main(int argc, char* argv[])
     current_result = NewPic.OpenFile(input_name);
     if (errorHandler(current_result) == -1)
         return 1;
-    Line line_1(10, 10, 60, 10, 10, 0), line_2(60, 10, 60, 110, 10, 0), line_3(10, 60, 110, 60, 10, 0), line_4(10, 60, 10, 110, 10, 0), line_5(60, 110, 110, 110, 10, 0), line_6(110, 60, 110, 10, 10, 0);
-    NewPic.line(line_1);
-    NewPic.line(line_2);
-    NewPic.line(line_3);
-    NewPic.line(line_4);
-    NewPic.line(line_5);
-    NewPic.line(line_6);
     NewPic.line(NewLine);
     current_result = NewPic.SaveToFile(output_name);
     if (errorHandler(current_result) == -1)
