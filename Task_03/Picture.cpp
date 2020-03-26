@@ -98,10 +98,10 @@ void Picture::Dither(DitheringType Dither, unsigned int bits)
 		{
 			for (int j = 0; j < width; j++)
 			{
-				buffer = (back_correct(image[i * width + j]) + (255/(bits))*(ordered_matrix[i % 8][j % 8] - 0.75))/255;
+				buffer = (back_correct(image[i * width + j]) + (255/(bits))*(ordered_matrix[i % 8][j % 8] - 0.5))/255;
 				if (buffer < 0)
 					buffer = 0;
-				buffer *= value;
+				buffer *= value - 1;
 				buffer = round(buffer);
 				image[i * width + j] = round(correct(buffer * (255 / (value - 1))));
 			}
