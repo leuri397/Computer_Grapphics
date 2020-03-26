@@ -46,7 +46,6 @@ int main(int argc, char* argv[])
     current_result = NewPic.OpenFile(input_name);
     if (errorHandler(current_result) == -1)
         return 1;
-   // NewPic.line(NewLine);
     if (gradient)
         NewPic.Fill();
     NewPic.Dither(NewDither, bits);
