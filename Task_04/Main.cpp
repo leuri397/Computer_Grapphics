@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
                 NewPicture.SetCS(CMY);
                 continue;
             }
-            std::cerr << "Unknown color space. Terminating";
+            std::cerr << "Unknown color space \""<< buffer << "\". Terminating";
             return 1;
         }
         if (buffer =="-t")
@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
                 convertion = CMY;
                 continue;
             }
-            std::cerr << "Unknown color space. Terminating";
+            std::cerr << "Unknown color space \""<< buffer << "\". Terminating";
             return 1;
         }
         if (buffer =="-i")
