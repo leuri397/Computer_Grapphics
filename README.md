@@ -10,3 +10,7 @@
 
 ### Лабораторная №3
 Лабораторная: [Лабораторная 3](https://github.com/leuri397/Computer_Grapphics/tree/master/Task_03)
+
+### Лабораторная №4
+Лабораторная: [Лабораторная 4](https://github.com/leuri397/Computer_Grapphics/tree/master/Task_04)
+
