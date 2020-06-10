@@ -16,3 +16,6 @@
 
 ### Лабораторная №5
 Лабораторная: [Лабораторная 5](https://github.com/leuri397/Computer_Grapphics/tree/master/Task_05)
+
+### Лабораторная №6
+Лабораторная: [Лабораторная 6](https://github.com/leuri397/Computer_Grapphics/tree/master/Task_06)
